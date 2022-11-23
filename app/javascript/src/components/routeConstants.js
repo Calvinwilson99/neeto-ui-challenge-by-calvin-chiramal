@@ -1,11 +1,9 @@
-import Dashboard from "components/Dashboard";
-
 export const DASHBOARD_PATH = "/";
 export const NOTES_PATH = "/notes";
 export const SETTINGS_PATH = "/settings";
 export const CONTACTS_PATH = "/contacts";
 
-export const PRIVATE_ROUTES = [{ path: DASHBOARD_PATH, component: Dashboard }];
+// export const PRIVATE_ROUTES = [{ path: DASHBOARD_PATH, component: Dashboard }];
 
 // export const DASHBOARD_ROUTES = [
 //   {
