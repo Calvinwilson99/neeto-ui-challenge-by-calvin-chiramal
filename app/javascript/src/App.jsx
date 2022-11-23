@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { AuthProvider } from "contexts/auth";
-import { UserProvider } from "contexts/user";
+import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-import Main from "./components/Main";
+import { initializeLogger } from "common/logger";
+import Dashboard from "components/Dashboard";
 
-const App = props => (
-  <AuthProvider>
-    <UserProvider>
-      <Main {...props} />
-    </UserProvider>
-  </AuthProvider>
-);
+const App = () => {
+  useEffect(() => {
+    initializeLogger();
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <ToastContainer />
+      <Dashboard />
+    </BrowserRouter>
+  );
+};
 
 export default App;
