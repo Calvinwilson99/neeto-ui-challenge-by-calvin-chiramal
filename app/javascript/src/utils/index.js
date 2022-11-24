@@ -1,3 +1,4 @@
-import * as R from "ramda";
+import dayjs from "dayjs";
 
-export const isPresent = R.pipe(R.either(R.isNil, R.isEmpty), R.not);
+export const getTimeFromNow = date => dayjs(date).fromNow();
+export const getDayAndTimeFromDate = date => dayjs(date).format("dddd, hh:mmA");
