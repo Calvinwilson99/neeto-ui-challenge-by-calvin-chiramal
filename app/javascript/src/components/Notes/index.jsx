@@ -9,7 +9,7 @@ import NavPanel from "./NavPanel";
 import Note from "./Note";
 
 const Notes = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
 
   return (
@@ -23,8 +23,8 @@ const Notes = () => {
             <Button className="mr-3 rounded" icon={Plus} label="Add Note" />
           }
           searchProps={{
-            onChange: e => setSearchValue(e.target.value),
-            value: searchValue,
+            onChange: e => setSearchTerm(e.target.value),
+            value: searchTerm,
             placeholder: "Search Name, Email, Phone Number",
           }}
         />
