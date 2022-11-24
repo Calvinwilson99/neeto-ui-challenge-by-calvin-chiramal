@@ -4,17 +4,25 @@ import { MenuVertical, Clock } from "neetoicons";
 import { Dropdown, Typography, Tag, Avatar, Tooltip } from "neetoui";
 import { getTimeFromNow, getDayAndTimeFromDate } from "utils";
 
-const Note = ({ title, description, createdAt, noteType }) => {
+const Note = ({
+  title,
+  description,
+  createdAt,
+  noteType,
+  setIsDeleteAlertOpen,
+}) => {
   const { Menu, MenuItem } = Dropdown;
 
   return (
     <div className="mx-4 my-2 flex flex-col border border-solid p-5 shadow">
       <div className="flex flex-row justify-between">
         <Typography style="h4">{title}</Typography>
-        <Dropdown className="bg-transparent" icon={MenuVertical}>
+        <Dropdown buttonStyle="text" icon={MenuVertical}>
           <Menu>
             <MenuItem.Button>Edit</MenuItem.Button>
-            <MenuItem.Button>Delete</MenuItem.Button>
+            <MenuItem.Button onClick={() => setIsDeleteAlertOpen(true)}>
+              Delete
+            </MenuItem.Button>
           </Menu>
         </Dropdown>
       </div>
