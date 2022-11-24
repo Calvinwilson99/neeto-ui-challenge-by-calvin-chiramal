@@ -1,9 +1,0 @@
-2022-11-23 20:13:15.652 IST [8248] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
-2022-11-23 20:13:15.653 IST [8248] LOG:  listening on IPv6 address "::1", port 5432
-2022-11-23 20:13:15.653 IST [8248] LOG:  listening on IPv4 address "127.0.0.1", port 5432
-2022-11-23 20:13:15.654 IST [8248] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
-2022-11-23 20:13:15.659 IST [8249] LOG:  database system was shut down at 2022-11-23 20:12:57 IST
-2022-11-23 20:13:15.662 IST [8248] LOG:  database system is ready to accept connections
-2022-11-23 20:13:29.770 IST [8458] FATAL:  database "bigbinary" does not exist
-2022-11-23 20:13:56.198 IST [8536] FATAL:  database "neeto-ui-challenge-by-calvin-chiramal_development" does not exist
-2022-11-23 20:14:43.342 IST [8641] FATAL:  database "neeto-ui-challenge-by-calvin-chiramal_development" does not exist
