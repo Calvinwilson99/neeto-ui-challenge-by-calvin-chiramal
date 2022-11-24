@@ -20,11 +20,7 @@ const Notes = () => {
           menuBarToggle={() => {}}
           title="All Notes"
           actionBlock={
-            <Button
-              className="mr-3 rounded bg-gray-800 text-white"
-              icon={Plus}
-              label="Add Note"
-            />
+            <Button className="mr-3 rounded" icon={Plus} label="Add Note" />
           }
           searchProps={{
             onChange: e => setSearchValue(e.target.value),
