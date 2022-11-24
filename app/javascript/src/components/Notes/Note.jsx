@@ -48,7 +48,7 @@ const Note = ({
           size="small"
           user={{
             imageUrl: "https://randomuser.me/api/portraits/women/74.jpg",
-            name: "Meghana",
+            name: "Eve",
           }}
         />
       </div>
