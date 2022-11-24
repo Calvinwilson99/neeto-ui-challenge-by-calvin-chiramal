@@ -17,6 +17,7 @@ coverage
 .*swp
 /uploads/*
 .byebug_history
+logfile
 
 # Ignore node packages
 node_modules
