@@ -5,12 +5,14 @@ import { Alert, Button, Toastr } from "neetoui";
 import { Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
+import CreatePane from "./CreatePane";
 import NavPanel from "./NavPanel";
 import Note from "./Note";
 
 const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDeleteAlertOpen, setIsDeleteAlertOpen] = useState(false);
+  const [isPaneOpen, setIsPaneOpen] = useState(false);
 
   return (
     <div className="flex w-screen flex-row">
@@ -20,7 +22,12 @@ const Notes = () => {
           menuBarToggle={() => {}}
           title="All Notes"
           actionBlock={
-            <Button className="mr-3 rounded" icon={Plus} label="Add Note" />
+            <Button
+              className="mr-3 rounded"
+              icon={Plus}
+              label="Add Note"
+              onClick={() => setIsPaneOpen(true)}
+            />
           }
           searchProps={{
             onChange: e => setSearchTerm(e.target.value),
@@ -50,6 +57,7 @@ const Notes = () => {
           Toastr.success("Note deleted successfully");
         }}
       />
+      <CreatePane isPaneOpen={isPaneOpen} setIsPaneOpen={setIsPaneOpen} />
     </div>
   );
 };

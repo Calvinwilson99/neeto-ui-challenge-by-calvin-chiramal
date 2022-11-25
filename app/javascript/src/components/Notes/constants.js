@@ -1,3 +1,5 @@
+import { buildSelectOptions } from "utils";
+
 export const NOTES = [
   {
     id: 1,
@@ -32,3 +34,17 @@ export const NOTES = [
     noteType: "Drafted",
   },
 ];
+
+export const CONTACT_DATA = buildSelectOptions([
+  "Ronald Richards",
+  "Jacob Jones",
+]);
+
+export const TAG_DATA = buildSelectOptions([
+  "Getting Started",
+  "Onboarding",
+  "User Flow",
+  "UX",
+  "Bugs",
+  "V2",
+]);
