@@ -2,6 +2,9 @@ import React from "react";
 
 import { MenuHorizontal } from "neetoicons";
 import { Dropdown, Avatar, Typography } from "neetoui";
+import * as yup from "yup";
+
+import { buildSelectOptions } from "utils/index";
 
 const { Menu, MenuItem } = Dropdown;
 
@@ -100,3 +103,28 @@ export const COLUMN_DATA = [
     width: 100,
   },
 ];
+
+export const ROLES_DATA = buildSelectOptions([
+  "Owner",
+  "Admin",
+  "External User",
+  "Project Manager",
+  "Agent",
+]);
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object({
+  firstName: yup.string().required("First name cannot be blank"),
+  lastName: yup.string().required("Last name cannot be blank"),
+  email: yup
+    .string()
+    .email("Please enter a valid email id")
+    .required("Email id cannot be blank"),
+  role: yup
+    .object()
+    .required("Please select a role")
+    .nullable()
+    .shape({
+      label: yup.string().oneOf(ROLES_DATA.map(option => option.label)),
+      value: yup.string().oneOf(ROLES_DATA.map(option => option.value)),
+    }),
+});
