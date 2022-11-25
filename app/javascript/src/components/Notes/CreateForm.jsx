@@ -6,7 +6,7 @@ import { Toastr, Pane } from "neetoui";
 import { Input, Select, Button } from "neetoui/formik";
 import * as Yup from "yup";
 
-import { TAG_OPTIONS, CONTACT_OPTIONS } from "./constants";
+import { TAG_DATA, CONTACT_DATA } from "./constants";
 
 const validationSchema = Yup.object({
   title: Yup.string().required("Title cannot be blank"),
@@ -15,14 +15,14 @@ const validationSchema = Yup.object({
     .required("Please select a contact")
     .nullable()
     .shape({
-      label: Yup.string().oneOf(CONTACT_OPTIONS.map(option => option.label)),
-      value: Yup.string().oneOf(CONTACT_OPTIONS.map(option => option.value)),
+      label: Yup.string().oneOf(CONTACT_DATA.map(option => option.label)),
+      value: Yup.string().oneOf(CONTACT_DATA.map(option => option.value)),
     }),
   tags: Yup.array()
     .of(
       Yup.object().shape({
-        label: Yup.string().oneOf(TAG_OPTIONS.map(option => option.label)),
-        value: Yup.string().oneOf(TAG_OPTIONS.map(option => option.value)),
+        label: Yup.string().oneOf(TAG_DATA.map(option => option.label)),
+        value: Yup.string().oneOf(TAG_DATA.map(option => option.value)),
       })
     )
     .min(1, "Select at least 1 tag"),
@@ -66,7 +66,7 @@ const CreateForm = ({ setIsPaneOpen }) => (
           id="assignedcontact"
           label="Assigned Contact"
           name="assignedcontact"
-          options={CONTACT_OPTIONS}
+          options={CONTACT_DATA}
           placeholder="Select Assigned Contact"
         />
         <Select
@@ -76,7 +76,7 @@ const CreateForm = ({ setIsPaneOpen }) => (
           id="tags"
           label="Tags"
           name="tags"
-          options={TAG_OPTIONS}
+          options={TAG_DATA}
           placeholder="Select Tags"
         />
       </Pane.Body>
