@@ -1,4 +1,5 @@
 import { buildSelectOptions } from "utils";
+import * as yup from "yup";
 
 export const NOTES = [
   {
@@ -48,3 +49,25 @@ export const TAG_DATA = buildSelectOptions([
   "Bugs",
   "V2",
 ]);
+
+export const NOTES_FORM_VALIDATION_SCHEMA = yup.object({
+  title: yup.string().required("Title cannot be blank"),
+  description: yup.string().required("Description cannot be blank"),
+  assignedcontact: yup
+    .object()
+    .required("Please select a contact")
+    .nullable()
+    .shape({
+      label: yup.string().oneOf(CONTACT_DATA.map(option => option.label)),
+      value: yup.string().oneOf(CONTACT_DATA.map(option => option.value)),
+    }),
+  tags: yup
+    .array()
+    .of(
+      yup.object().shape({
+        label: yup.string().oneOf(TAG_DATA.map(option => option.label)),
+        value: yup.string().oneOf(TAG_DATA.map(option => option.value)),
+      })
+    )
+    .min(1, "Select at least 1 tag"),
+});
