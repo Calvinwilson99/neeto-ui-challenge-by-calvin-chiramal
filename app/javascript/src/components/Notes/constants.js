@@ -32,3 +32,41 @@ export const NOTES = [
     noteType: "Drafted",
   },
 ];
+
+export const CONTACT_OPTIONS = [
+  {
+    value: "ronald-richards",
+    label: "Ronald Richards",
+  },
+  {
+    value: "jacob-jones",
+    label: "Jacob Jones",
+  },
+];
+
+export const TAG_OPTIONS = [
+  {
+    value: "getting-started",
+    label: "Getting Started",
+  },
+  {
+    value: "onboarding",
+    label: "Onboarding",
+  },
+  {
+    value: "user-flow",
+    label: "User Flow",
+  },
+  {
+    value: "ux",
+    label: "UX",
+  },
+  {
+    value: "bugs",
+    label: "Bugs",
+  },
+  {
+    value: "v2",
+    label: "V2",
+  },
+];
