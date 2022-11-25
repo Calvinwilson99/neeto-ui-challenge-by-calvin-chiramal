@@ -4,33 +4,16 @@ import { Form, Formik } from "formik";
 import { Check } from "neetoicons";
 import { Toastr, Pane } from "neetoui";
 import { Input, Select, Button } from "neetoui/formik";
-import * as Yup from "yup";
 
-import { TAG_DATA, CONTACT_DATA } from "./constants";
-
-const validationSchema = Yup.object({
-  title: Yup.string().required("Title cannot be blank"),
-  description: Yup.string().required("Description cannot be blank"),
-  assignedcontact: Yup.object()
-    .required("Please select a contact")
-    .nullable()
-    .shape({
-      label: Yup.string().oneOf(CONTACT_DATA.map(option => option.label)),
-      value: Yup.string().oneOf(CONTACT_DATA.map(option => option.value)),
-    }),
-  tags: Yup.array()
-    .of(
-      Yup.object().shape({
-        label: Yup.string().oneOf(TAG_DATA.map(option => option.label)),
-        value: Yup.string().oneOf(TAG_DATA.map(option => option.value)),
-      })
-    )
-    .min(1, "Select at least 1 tag"),
-});
+import {
+  TAG_DATA,
+  CONTACT_DATA,
+  NOTES_FORM_VALIDATION_SCHEMA,
+} from "./constants";
 
 const CreateForm = ({ setIsPaneOpen }) => (
   <Formik
-    validationSchema={validationSchema}
+    validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
     initialValues={{
       title: "",
       description: "",
