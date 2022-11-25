@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 import { initializeLogger } from "common/logger";
 import Sidebar from "components/Common/Sidebar";
+import Contacts from "components/Contacts";
 import Notes from "components/Notes";
 import "lib/dayjs";
 
@@ -19,7 +20,8 @@ const App = () => {
       <div className="flex flex-row items-start justify-start">
         <Sidebar />
         <Switch>
-          <Route component={Notes} path="/" />
+          <Route exact component={Notes} path="/" />
+          <Route exact component={Contacts} path="/contacts" />
         </Switch>
       </div>
     </BrowserRouter>
