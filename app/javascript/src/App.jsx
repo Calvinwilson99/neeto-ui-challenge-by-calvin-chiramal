@@ -21,7 +21,7 @@ const App = () => {
         <Sidebar />
         <Switch>
           <Redirect exact from="/" to="/notes" />
-          <Route exact component={Notes} path="/" />
+          <Route exact component={Notes} path="/notes" />
           <Route exact component={Contacts} path="/contacts" />
         </Switch>
       </div>
