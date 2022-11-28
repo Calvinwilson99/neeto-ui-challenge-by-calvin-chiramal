@@ -5,7 +5,7 @@ export const APP_NAME = "Notes App";
 export const SIDENAV_LINKS = [
   {
     label: "Notes",
-    to: "/",
+    to: "/notes",
     icon: Notes,
   },
   {

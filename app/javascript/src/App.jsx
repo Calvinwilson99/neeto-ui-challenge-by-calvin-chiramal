@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Switch, BrowserRouter, Route } from "react-router-dom";
+import { Switch, BrowserRouter, Route, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import { initializeLogger } from "common/logger";
@@ -20,6 +20,7 @@ const App = () => {
       <div className="flex flex-row items-start justify-start">
         <Sidebar />
         <Switch>
+          <Redirect exact from="/" to="/notes" />
           <Route exact component={Notes} path="/" />
           <Route exact component={Contacts} path="/contacts" />
         </Switch>
