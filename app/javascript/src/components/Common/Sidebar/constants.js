@@ -1,12 +1,12 @@
-import { Notes, UserCircle, Inbox } from "neetoicons";
+import { Text, UserCircle, Inbox } from "neetoicons";
 
 export const APP_NAME = "Notes App";
 
 export const SIDENAV_LINKS = [
   {
     label: "Notes",
-    to: "/",
-    icon: Notes,
+    to: "/notes",
+    icon: Text,
   },
   {
     label: "Contacts",

@@ -12,10 +12,10 @@ const NavPanel = () => {
   return (
     <div className="flex">
       <MenuBar showMenu title="Notes">
-        <MenuBar.Block active count={13} label="All" />
-        <MenuBar.Block count={2} label="Users" />
-        <MenuBar.Block count={7} label="Leads" />
-        <MenuBar.Block count={4} label="Visitors" />
+        <MenuBar.Block active count={200} label="All" />
+        <MenuBar.Block count={80} label="Users" />
+        <MenuBar.Block count={60} label="Leads" />
+        <MenuBar.Block count={60} label="Visitors" />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -73,9 +73,9 @@ const NavPanel = () => {
           collapse={isTagsSearchCollapsed}
           onCollapse={() => setIsTagsSearchCollapsed(true)}
         />
-        <MenuBar.Block count={80} label="Europe" />
-        <MenuBar.Block count={60} label="Middle-East" />
-        <MenuBar.Block count={60} label="Asia" />
+        <MenuBar.Block count={80} label="Sales" />
+        <MenuBar.Block count={60} label="Finance" />
+        <MenuBar.Block count={60} label="User Experience" />
       </MenuBar>
     </div>
   );
