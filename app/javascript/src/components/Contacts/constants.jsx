@@ -59,7 +59,7 @@ export const CONTACTS = [
   },
 ];
 
-export const COLUMN_DATA = [
+export const buildColumnData = setIsDeleteAlertOpen => [
   {
     dataIndex: "nameRole",
     key: "nameRole",
@@ -94,7 +94,10 @@ export const COLUMN_DATA = [
       <Dropdown buttonStyle="text" icon={MenuHorizontal} strategy="fixed">
         <Menu>
           <MenuItem.Button>Edit</MenuItem.Button>
-          <MenuItem.Button style="danger" onClick={() => {}}>
+          <MenuItem.Button
+            style="danger"
+            onClick={() => setIsDeleteAlertOpen(true)}
+          >
             Delete
           </MenuItem.Button>
         </Menu>

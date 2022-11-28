@@ -2,16 +2,16 @@ import React, { useState } from "react";
 
 import { Table as NeetoUITable } from "neetoui";
 
-import { CONTACTS, COLUMN_DATA } from "./constants";
+import { CONTACTS, buildColumnData } from "./constants";
 
-const Table = () => {
+const Table = ({ setIsDeleteAlertOpen }) => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   return (
     <NeetoUITable
       rowSelection
-      columnData={COLUMN_DATA}
+      columnData={buildColumnData(setIsDeleteAlertOpen)}
       currentPageNumber={currentPageNumber}
       defaultPageSize={6}
       handlePageChange={page => setCurrentPageNumber(page)}
