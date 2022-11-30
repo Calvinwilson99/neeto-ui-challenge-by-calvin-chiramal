@@ -5,17 +5,16 @@ import { Check } from "neetoicons";
 import { Toastr, Pane } from "neetoui";
 import { Input, Select, Button } from "neetoui/formik";
 
-import { ROLES_DATA, CONTACTS_FORM_VALIDATION_SCHEMA } from "./constants";
+import {
+  ROLES_DATA,
+  CONTACTS_FORM_INITIAL_VALUES,
+  CONTACTS_FORM_VALIDATION_SCHEMA,
+} from "./constants";
 
 const CreateForm = ({ setIsPaneOpen }) => (
   <Formik
+    initialValues={CONTACTS_FORM_INITIAL_VALUES}
     validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
-    initialValues={{
-      firstName: "",
-      lastName: "",
-      email: "",
-      role: null,
-    }}
     onSubmit={() => {
       Toastr.success("Contact added successfully");
       setIsPaneOpen(false);

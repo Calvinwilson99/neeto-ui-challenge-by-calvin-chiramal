@@ -14,10 +14,10 @@ const Table = ({ setIsDeleteAlertOpen }) => {
       columnData={buildColumnData(setIsDeleteAlertOpen)}
       currentPageNumber={currentPageNumber}
       defaultPageSize={6}
-      handlePageChange={page => setCurrentPageNumber(page)}
+      handlePageChange={setCurrentPageNumber}
       rowData={CONTACTS}
       selectedRowKeys={selectedRowKeys}
-      onRowSelect={selectedKeys => setSelectedRowKeys(selectedKeys)}
+      onRowSelect={setSelectedRowKeys}
     />
   );
 };

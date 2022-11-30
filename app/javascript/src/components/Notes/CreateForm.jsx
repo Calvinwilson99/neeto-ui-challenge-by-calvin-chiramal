@@ -8,18 +8,14 @@ import { Input, Select, Button } from "neetoui/formik";
 import {
   TAG_DATA,
   CONTACT_DATA,
+  NOTES_FORM_INITIAL_VALUES,
   NOTES_FORM_VALIDATION_SCHEMA,
 } from "./constants";
 
 const CreateForm = ({ setIsPaneOpen }) => (
   <Formik
+    initialValues={NOTES_FORM_INITIAL_VALUES}
     validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
-    initialValues={{
-      title: "",
-      description: "",
-      assignedcontact: null,
-      tags: [],
-    }}
     onSubmit={() => {
       Toastr.success("Note added successfully");
       setIsPaneOpen(false);

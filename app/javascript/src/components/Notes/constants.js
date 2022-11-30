@@ -50,6 +50,13 @@ export const TAG_DATA = buildSelectOptions([
   "V2",
 ]);
 
+export const NOTES_FORM_INITIAL_VALUES = {
+  title: "",
+  description: "",
+  assignedcontact: null,
+  tags: [],
+};
+
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object({
   title: yup.string().required("Title cannot be blank"),
   description: yup.string().required("Description cannot be blank"),

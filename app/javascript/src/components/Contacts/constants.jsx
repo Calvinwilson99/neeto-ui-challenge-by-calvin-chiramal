@@ -115,6 +115,13 @@ export const ROLES_DATA = buildSelectOptions([
   "Agent",
 ]);
 
+export const CONTACTS_FORM_INITIAL_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  role: null,
+};
+
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object({
   firstName: yup.string().required("First name cannot be blank"),
   lastName: yup.string().required("Last name cannot be blank"),
